@@ -1,0 +1,72 @@
+---
+kind: pipeline
+name: linux-pipeline-jdk17
+type: docker
+
+image_pull_secrets:
+  - dockerconfig
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: restore
+    image: meltwater/drone-cache:v1.2.2
+    pull: always
+    volumes:
+      - name: jdk17m2cache
+        path: /drone/src/.repo
+    settings:
+      cache_key: "{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}_{{ checksum \"pom.xml\" }}"
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      bucket: maven-it-extension-build-cache
+      region: eu-central-1
+      restore: true
+      filesystem-cache-root: /drone/src
+      mount:
+        - .repo
+
+  - name: mavenjdk17
+    pull: always
+    image: docker.io/maven:3.8.4-openjdk-17-slim
+    volumes:
+      - name: jdk17m2cache
+        path: /drone/src/.repo
+    commands:
+      - mvn -Dmaven.repo.local=/drone/src/.repo -V --no-transfer-progress clean verify --fail-at-end --batch-mode
+# We have to use the latest version instead of a tagged version.
+# We need to reconsider the configuration.
+  - name: coverage
+    image: plugins/codecov
+    settings:
+      token:
+        from_secret: CODECOV_TOKEN
+      files:
+        - target/site/jacoco/jacoco.xml
+  - name: rebuild
+    image: meltwater/drone-cache:v1.2.2
+    pull: always
+    volumes:
+      - name: jdk17m2cache
+        path: /drone/src/.repo
+    settings:
+      cache_key: "{{ .Repo.Owner }}_{{ .Repo.Name }}_{{ .Commit.Branch }}_{{ checksum \"pom.xml\" }}"
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      bucket: maven-it-extension-build-cache
+      region: eu-central-1
+      rebuild: true
+      filesystem-cache-root: /drone/src
+      mount:
+        - .repo
+      when:
+        event: push
+volumes:
+  - name: jdk17m2cache
+    temp: { }
