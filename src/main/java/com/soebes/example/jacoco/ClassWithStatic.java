@@ -30,9 +30,6 @@ public class ClassWithStatic {
   }
 
   public static Boolean staticMethod(int value) {
-    if (value == 10) {
-      return true;
-    }
-    return false;
+    return value == 10;
   }
 }
