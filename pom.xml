@@ -135,7 +135,7 @@
             <showDeprecation>true</showDeprecation>
             <compilerArgs>
               <arg>-Xlint:all</arg>
-              <arg>-Xlint:unchecked</arg>
+              <arg>-Xlint:-processing</arg>
             </compilerArgs>
           </configuration>
         </plugin>
