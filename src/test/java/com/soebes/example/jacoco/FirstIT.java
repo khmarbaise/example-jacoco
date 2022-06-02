@@ -19,16 +19,17 @@ package com.soebes.example.jacoco;
  * under the License.
  */
 
-/**
- * @author Karl Heinz Marbaise
- */
-public record First(int sum) {
+import static org.assertj.core.api.Assertions.assertThat;
 
-  public First add(First first) {
-    return new First(first.sum + this.sum);
-  }
+import org.junit.jupiter.api.Test;
 
-  public First sub(First first) {
-    return new First(this.sum - first.sum);
+class FirstIT {
+
+  @Test
+  void first_add() {
+    First sum1 = new First(5);
+    First sum2 = new First(2);
+
+    assertThat(sum1.sub(sum2)).isEqualTo(new First(3));
   }
 }
