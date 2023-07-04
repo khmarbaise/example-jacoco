@@ -32,4 +32,11 @@ class FirstIT {
 
     assertThat(sum1.sub(sum2)).isEqualTo(new First(3));
   }
+  @Test
+  void first_minus() {
+    First sum1 = new First(5);
+    First sum2 = new First(2);
+
+    assertThat(sum1.minus(sum2)).isEqualTo(new First(3));
+  }
 }

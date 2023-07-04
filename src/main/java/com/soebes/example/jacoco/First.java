@@ -31,4 +31,7 @@ public record First(int sum) {
   public First sub(First first) {
     return new First(this.sum - first.sum);
   }
+  public First minus(First first) {
+    return new First(this.sum - first.sum);
+  }
 }
