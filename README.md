@@ -16,3 +16,8 @@
 -->
 # JaCoCo Example
 
+Howto configure JaCoCo in [Apache Maven][apache-maven].
+
+
+
+[apache-maven]: https://maven.apache.org
