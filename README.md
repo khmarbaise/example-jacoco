@@ -16,8 +16,37 @@
 -->
 # JaCoCo Example
 
-Howto configure JaCoCo in [Apache Maven][apache-maven].
+This example project is related to a blog article which describes the configuration 
+to use JaCoCo in your [Apache Maven project][apache-maven].
 
+## Requirements
+
+* JDK17+
+* Apache Maven 3.8+
+
+The given code example can easily being changed to work with JDK version less than 17,
+because you can simply replace the given `record` in the example with a usual 
+final class implemented in the classical way. 
+
+## JaCoCo Report
+
+To create a full JaCoCo coverage report you could start via:
+
+```bash
+mvn clean verify
+```
+
+Creating a report which covers only the unit tests can be achieved by:
+
+```bash
+mvn clean verify -DskipITs
+```
+
+If you like to have the integration test reports only:
+
+```bash
+mvn clean verify -DskipUTs
+```
 
 
 [apache-maven]: https://maven.apache.org
