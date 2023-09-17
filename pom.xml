@@ -152,21 +152,6 @@
       </plugins>
     </pluginManagement>
     <plugins>
-<!--
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
--->
-
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -177,25 +162,6 @@
               <goal>report</goal>
             </goals>
           </execution>
-<!--
-          <execution>
-            <id>merge</id>
-            <goals>
-              <goal>merge</goal>
-            </goals>
-            <phase>post-integration-test</phase>
-            <configuration>
-              <fileSets>
-                <fileSet>
-                  <directory>${project.build.directory}</directory>
-                  <includes>
-                    <include>*.exec</include>
-                  </includes>
-                </fileSet>
-              </fileSets>
-            </configuration>
-          </execution>
--->
         </executions>
       </plugin>
     </plugins>
