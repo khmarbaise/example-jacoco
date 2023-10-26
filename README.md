@@ -26,7 +26,7 @@ This example project is related to the blog post:
 ## Requirements
 
 * JDK21+
-* Apache Maven 3.8+
+* Apache Maven 3.8+ (also Maven 4.0.0-alpha-8+ supported).
 
 The given code example can easily being changed to work with JDK version less than 17,
 because you can simply replace the given `record` in the example with a usual 
