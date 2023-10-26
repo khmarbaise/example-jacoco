@@ -16,12 +16,8 @@
 -->
 # JaCoCo Example
 
-This example project is related to a blog article which describes the configuration 
-to use JaCoCo in your [Apache Maven project][apache-maven].
-
-This example project is related to the blog post:
-
-* https://blog.soebes.io/posts/2023/10/2023-10-26-maven-jacoco-configuration/
+This example project is related to a [blog article](https://blog.soebes.io/posts/2023/10/2023-10-26-maven-jacoco-configuration/)
+which describes the configuration to use JaCoCo in your [Apache Maven project][apache-maven].
 
 ## Requirements
 
