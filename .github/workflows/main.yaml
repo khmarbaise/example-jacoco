@@ -36,8 +36,6 @@ jobs:
         with:
           distribution: 'oracle'
           java-version: 21
-          cache: 'maven'
-          check-latest: true
       - name: 'Build'
         shell: bash
         run: mvn -V clean verify --fail-at-end --color always
