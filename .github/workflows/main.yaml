@@ -38,4 +38,4 @@ jobs:
           java-version: 21
       - name: 'Build'
         shell: bash
-        run: mvn -V clean verify --fail-at-end --color always
+        run: mvn -V -B clean verify --fail-at-end --color always
