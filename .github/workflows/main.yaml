@@ -40,4 +40,4 @@ jobs:
           check-latest: true
       - name: 'Build'
         shell: bash
-        run: mvn -B -V --no-transfer-progress clean verify --fail-at-end --color always
+        run: mvn -V --no-transfer-progress clean verify --fail-at-end --color always
