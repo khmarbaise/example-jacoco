@@ -22,7 +22,7 @@ which describes the configuration to use JaCoCo in your [Apache Maven project][a
 ## Requirements
 
 * JDK21+
-* Apache Maven 3.8+ (also Maven 4.0.0-alpha-8+ supported).
+* Apache Maven 3.8+ (also Maven 4.0.0-alpha-12+ supported).
 
 The given code example can easily being changed to work with JDK version less than 17,
 because you can simply replace the given `record` in the example with a usual 
