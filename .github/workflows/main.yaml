@@ -38,6 +38,11 @@ jobs:
           java-version: 21
           cache: 'maven'
           check-latest: true
+      - name: Set up Maven
+        uses: hb0730/maven-action@v1.0.1
+        with:
+          maven-version: 3.9.6
+          url: https://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.9.6/apache-maven-3.9.6-bin.tar.gz
       - name: 'Build'
         shell: bash
         run: mvn -V -B -ntp clean verify --fail-at-end --color always
