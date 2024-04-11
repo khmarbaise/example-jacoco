@@ -19,6 +19,8 @@
 This example project is related to a [blog article](https://blog.soebes.io/posts/2023/10/2023-10-26-maven-jacoco-configuration/)
 which describes the configuration to use JaCoCo in your [Apache Maven project][apache-maven].
 
+Also you can find the article on https://khmarbaise.medium.com/apache-maven-jacoco-configuration-ea3cb592159f
+
 ## Requirements
 
 * JDK21+
